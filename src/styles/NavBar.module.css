@@ -1,0 +1,75 @@
+/* src/styles/NavBar.module.css */
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: #ffffff; /* Fond blanc */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 60px; /* Hauteur de la navbar à 60px */
+
+  position: fixed; /* Rendre la navbar fixe */
+  top: 0; /* Aligner en haut du viewport */
+  left: 0; /* Aligner à gauche du viewport */
+  width: 100%; /* Occuper toute la largeur du viewport */
+  z-index: 1000; /* Assurer qu'elle est au-dessus des autres éléments */
+}
+
+.logoContainer {
+  display: flex; /* Assure que le logo est bien aligné */
+  align-items: center;
+}
+
+.navLinks {
+  display: none; /* Masqué par défaut pour mobile */
+}
+
+.navLinkItem { /* Nouvelle classe pour les styles spécifiques aux liens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  
+  width: 120px;
+  height: 15px;
+  color: #2f2f2f;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 0.1rem; /* Espacement entre les liens */
+  transition: color 0.2s ease-in-out;
+  font-family: 'Inter', sans-serif;
+}
+
+.navLinkItem:hover {
+  color: #007bff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.burgerMenu {
+  display: block; /* Visible par défaut pour mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.burgerIcon {
+  width: 24px;
+  height: 24px;
+  stroke: #333333;
+}
+
+/* Media Queries pour les écrans plus grands */
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex; /* Affiche les liens sur les écrans plus grands */
+    flex-wrap: nowrap;
+  }
+
+  .burgerMenu {
+    display: none; /* Masque le menu burger sur les écrans plus grands */
+  }
+}

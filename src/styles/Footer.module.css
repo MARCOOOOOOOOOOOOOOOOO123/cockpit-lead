@@ -1,0 +1,39 @@
+/* src/styles/Footer.module.css */
+
+.footer {
+  /* Équivalent de flex gap-[24px] flex-wrap items-center justify-center */
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace manque */
+  gap: 24px; /* Espacement entre les éléments */
+  align-items: center; /* Centre verticalement les éléments */
+  justify-content: center; /* Centre horizontalement les éléments */
+  padding: 1.5rem; /* Ajoute un peu de padding pour le confort visuel */
+  background-color: #f0f0f0; /* Une couleur de fond légère pour le footer */
+  border-top: 1px solid #e0e0e0; /* Petite bordure supérieure */
+  margin-top: auto; /* Pousse le footer vers le bas si le contenu est court */
+  width: 100%; /* S'assure qu'il prend toute la largeur */
+}
+
+.footerLink {
+  /* Équivalent de flex items-center gap-2 hover:underline hover:underline-offset-4 */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Équivalent de gap-2 (2 * 4px = 8px) */
+  color: #333333; /* Couleur de texte par défaut */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out; /* Transition douce */
+}
+
+.footerLink:hover {
+  color: #007bff; /* Couleur bleue au survol */
+  text-decoration: underline; /* Souligne au survol */
+  text-underline-offset: 4px; /* Décalage du soulignement */
+}
+
+/* Vous pouvez ajouter des media queries ici si vous voulez un comportement différent sur mobile */
+/* Par exemple, pour réduire le gap ou changer le flex-direction */
+@media (max-width: 640px) {
+  .footer {
+    gap: 16px; /* Réduire le gap sur mobile */
+  }
+}

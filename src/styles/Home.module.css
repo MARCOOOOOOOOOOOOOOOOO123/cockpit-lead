@@ -1,0 +1,27 @@
+/* src/styles/Home.module.css */
+
+.pageContainer {
+  min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
+  background-color: #f7f7f7; /* Couleur de fond légère */
+}
+
+.mainContent {
+  max-width: 1200px; /* Largeur maximale du contenu */
+  margin: 0 auto; /* Centre le contenu horizontalement */
+  padding: 2rem; /* Espacement intérieur */
+}
+
+.heading {
+  font-size: 2.5rem; /* Taille du titre */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2.5rem; /* Espacement du haut */
+  color: #333333; /* Couleur du texte */
+}
+
+.subheading {
+  font-size: 1.25rem; /* Taille du sous-titre */
+  text-align: center;
+  color: #666666; /* Couleur du texte plus claire */
+  margin-top: 1rem; /* Espacement du haut */
+}

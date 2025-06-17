@@ -1,0 +1,114 @@
+/* src/styles/FAQSection.module.css */
+
+.faqSection {
+  background-color: #ffffff; /* Fond blanc */
+  padding: 4rem 2rem; /* Espacement intérieur */
+  text-align: center; /* Centre le titre */
+  color: #333333;
+  margin: 0 auto; /* MODIFIÉ: margin-top mis à 0 pour coller à la section précédente */
+  max-width: 1000px; /* Largeur maximale pour la section FAQ */
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #0c1a25;
+}
+
+.faqContainer {
+  width: 100%;
+  max-width: 800px; /* Largeur maximale du conteneur des questions/réponses */
+  margin: 0 auto; /* Centre le conteneur des FAQ */
+  border-radius: 8px; /* Bords arrondis pour le conteneur global */
+  overflow: hidden; /* S'assure que les coins sont bien arrondis */
+}
+
+/* Styles pour le premier élément FAQ statique */
+.faqItemStatic {
+  background-color: #ffffff;
+  padding: 1.2rem 1.5rem; /* Padding pour la question statique */
+  text-align: left;
+  border-bottom: 1px solid #000000; /* Trait noir en dessous de la première question/réponse statique */
+}
+
+.faqQuestionStatic {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333333;
+  margin-top: 0; /* Supprime la marge par défaut du h3 */
+  margin-bottom: 0.5rem; /* Espace entre question et réponse statiques */
+}
+
+.faqAnswerStatic {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 0; /* Supprime la marge par défaut du p */
+}
+
+/* Styles pour les éléments FAQ interactifs */
+.faqItem {
+  /* Pas de bordure sur le faqItem lui-même */
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background-color: #ffffff;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #000000; /* Trait noir en dessous de chaque question interactive */
+}
+
+.faqQuestion:hover {
+  background-color: #f5f5f5;
+}
+
+.faqQuestion.active {
+    /* Style pour la question quand elle est ouverte */
+    font-weight: 700;
+    color: #0c1a25;
+    border-bottom: none; /* Pas de bordure sous la question ouverte, elle est sous la réponse */
+}
+
+
+.toggleIcon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000; /* Couleur noire pour le signe + / - */
+  margin-left: 1rem;
+}
+
+.faqAnswer {
+  padding: 1rem 1.5rem 1.5rem;
+  background-color: #ffffff;
+  border-top: none;
+  border-bottom: 1px solid #000000; /* Trait noir sous la réponse des accordéons ouverts */
+  text-align: left;
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.6;
+}
+
+.faqAnswer p {
+  margin: 0;
+}
+
+/* S'assure que le dernier élément interactif n'a pas de bordure en bas de sa réponse si ouverte */
+.faqItem:last-child .faqAnswer {
+    border-bottom: none;
+}
+/* S'assure que le dernier élément interactif n'a pas de bordure en bas de sa question si fermée */
+.faqItem:last-child .faqQuestion {
+    border-bottom: none;
+}
