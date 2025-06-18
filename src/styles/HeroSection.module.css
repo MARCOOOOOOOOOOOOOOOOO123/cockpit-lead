@@ -77,6 +77,43 @@
   margin-right: 90;
 }
 
+/* Media Queries pour les petits écrans / téléphones plus grands (ex: iPhone 12, ~480px et plus) */
+@media (min-width: 480px) {
+  .heroSection {
+    flex-direction: row; /* Passe en disposition côte à côte */
+    justify-content: space-around; /* Espace le contenu et l'image */
+    align-items: center; /* Aligne verticalement les éléments */
+    padding: 4rem 2rem; /* Rétablit un padding légèrement plus grand */
+  }
+
+  .contentContainer {
+    text-align: left; /* Aligne le texte à gauche */
+    width: 50%; /* Prend la moitié de la largeur */
+    margin-right: 1rem; /* Petit espace entre le texte et l'image */
+    margin-bottom: 0;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem; /* Titre légèrement plus grand */
+  }
+
+  .heroSubtitle {
+    font-size: 1.15rem; /* Sous-titre légèrement plus grand */
+  }
+
+  .imageContainer {
+    width: 50%; /* Prend la moitié de la largeur */
+    margin-top: 0;
+    justify-content: flex-end; /* Pousse l'image vers la droite dans sa moitié de conteneur */
+  }
+
+  .heroImage {
+  max-width: 100%; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-left: 180;
+}
+}
 
 /* Media Queries pour les écrans plus grands (desktop) */
 @media (min-width: 768px) {
