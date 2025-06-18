@@ -29,7 +29,7 @@ const NavBar = () => {
       {/* Liens de navigation (Desktop) */}
       <div className={styles.navLinks}>
         <Link href="/" className={styles.navLinkItem}>
-          Accueil
+          Accueil Bonjour
         </Link>
         <Link href="/nos-offres" className={styles.navLinkItem}>
           Nos offres
