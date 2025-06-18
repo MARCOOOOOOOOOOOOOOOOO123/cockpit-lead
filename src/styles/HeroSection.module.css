@@ -113,6 +113,13 @@
     margin-top: 8rem; /* Décale l'image vers le bas pour que le texte soit plus haut */
     /* Ajuste cette valeur (5rem) pour trouver l'alignement parfait */
   }
+
+  .heroImage {
+  max-width: 100%; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-left: 180;
+}
 }
 
 /* Media Query spécifique pour la largeur de 1440px */
