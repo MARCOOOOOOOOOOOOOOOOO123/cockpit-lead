@@ -1,7 +1,7 @@
 /* src/styles/OffersSection.module.css */
 
 .offersSection {
-  background-color: #ffffff; /* Couleur de fond plus claire, proche de celle de l'image */
+  background-color: #ffffff; /* Couleur de fond pâle, proche de celle de l'image */
   padding: 4rem 2rem; /* Padding pour l'espacement */
   text-align: center; /* Centre le titre et le sous-titre */
   color: #333333; /* Couleur de texte par défaut */
@@ -28,26 +28,30 @@
 .cardsContainer {
   display: flex;
   flex-direction: column; /* Par défaut en colonne pour mobile */
-  gap: 1.5rem; /* Espacement entre les cartes */
-  max-width: 1000px; /* Largeur maximale du conteneur de cartes */
+  gap: 2.5rem; /* Espacement entre les groupes (carte + bouton) sur mobile */
+  max-width: 1000px; /* Largeur maximale du conteneur de cartes pour bien centrer */
   margin: 0 auto; /* Centre le conteneur */
-  align-items: center; /* Centre les cartes dans le conteneur pour mobile */
+  align-items: center; /* Centre les groupes dans le conteneur pour mobile */
+}
+
+/* Nouveau style pour le wrapper de chaque carte + bouton */
+.offerItemWrapper {
+  display: flex;
+  flex-direction: column; /* Empile la carte et le bouton */
+  align-items: center; /* Centre la carte et le bouton horizontalement */
+  gap: 1.5rem; /* Espacement entre la carte et son bouton */
+  width: 100%; /* Prend la largeur disponible */
+  max-width: 450px; /* Limite la largeur pour correspondre à offerCard sur desktop */
 }
 
 .offerCard {
   background-color: #ffffff; /* Fond blanc pour chaque carte */
   border-radius: 12px; /* Bords arrondis */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Ombre légère */
-  padding: 2.5rem; /* Padding interne de la carte, légèrement augmenté pour l'espace */
+  padding: 2.5rem; /* Padding interne de la carte */
   text-align: left; /* Texte aligné à gauche dans la carte */
-  flex: 1; /* Permet aux cartes de s'étirer et de prendre l'espace disponible */
-  min-width: 280px; /* Largeur minimale */
-  max-width: 48%; /* Permet à deux cartes de tenir sur une ligne avec un petit gap */
-  border: 1px solid #e0e0e0; /* Petite bordure autour des cartes */
-  display: flex; /* Utilise flexbox pour l'alignement interne */
-  flex-direction: column; /* Organise le contenu de la carte en colonne */
-  justify-content: space-between; /* Pousse le bouton vers le bas */
   box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur/hauteur */
+  width: 100%; /* La carte prend la largeur de son wrapper */
 }
 
 .cardTitle {
@@ -59,15 +63,15 @@
 
 .offerList {
   list-style: none; /* Supprime les puces par défaut */
-  padding: 0;
-  margin-bottom: 2rem; /* Espacement avant le bouton */
+  padding: 0; /* MODIFIÉ: Retiré le padding-left du ul */
+  margin-bottom: 0;
   flex-grow: 1; /* Permet à la liste de prendre l'espace disponible */
 }
 
 .offerList li {
   position: relative;
-  padding-left: 1.5rem; /* Espace pour la puce personnalisée */
-  margin-bottom: 0.8rem; /* Espacement entre les éléments de la liste */
+  padding-left: 0; /* MODIFIÉ: Retiré le padding-left sur le li lui-même */
+  margin-bottom: 0.8rem;
   font-size: 1rem; /* Taille de texte légèrement ajustée */
   line-height: 1.5;
   color: #333333; /* Couleur de texte des listes */
@@ -78,9 +82,9 @@
   color: #000000; /* Couleur noire pour la puce */
   font-weight: bold;
   position: absolute;
-  left: 0;
-  top: 0; /* Alignement du point avec le haut du texte */
-  font-size: 1.2rem; /* Taille de la puce */
+  left: -1.5rem; /* MODIFIÉ: Décalé la puce vers la gauche de l'item */
+  top: 0.1rem; /* Ajusté l'alignement vertical pour la nouvelle taille */
+  font-size: 1.2rem; /* Augmenté la taille de la puce */
 }
 
 .cardButton {
@@ -93,8 +97,6 @@
   font-weight: 500;
   transition: background-color 0.3s ease;
   width: fit-content; /* Le bouton prend la largeur de son contenu */
-  margin: 0 auto; /* Centre le bouton dans la carte */
-  margin-top: 1.5rem; /* Ajout d'une marge top pour espacer du contenu de la liste */
 }
 
 .cardButton:hover {
@@ -104,18 +106,20 @@
 /* Media Queries pour les écrans plus grands (desktop) */
 @media (min-width: 768px) {
   .cardsContainer {
-    flex-direction: row; /* Affiche les cartes en ligne sur desktop */
-    justify-content: center; /* Centre les cartes horizontalement */
-    align-items: flex-start; /* Aligne les cartes en haut si elles ont des hauteurs différentes */
+    flex-direction: row; /* Affiche les groupes (carte + bouton) en ligne sur desktop */
+    justify-content: center; /* Centre les groupes horizontalement */
+    align-items: flex-start; /* Aligne les groupes en haut si elles ont des hauteurs différentes */
+    gap: 3rem; /* Espacement entre les groupes sur desktop */
   }
 
-  .offerCard {
-    max-width: 450px; /* Ajuste la largeur maximale pour deux colonnes côte à côte */
+  .offerItemWrapper {
+    max-width: 450px; /* Limite la largeur de chaque groupe sur desktop */
   }
+
 }
 
 @media (min-width: 1024px) {
-  .offerCard {
-    /* Si nécessaire, des ajustements supplémentaires pour les très grands écrans */
+  .cardsContainer {
+    gap: 4rem; /* Plus grand espacement entre les groupes sur très grands écrans */
   }
 }
