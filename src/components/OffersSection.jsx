@@ -15,7 +15,8 @@ const OffersSection = () => {
         {/* Premier groupe : Carte 1 + Bouton 1 */}
         <div className={styles.offerItemWrapper}> {/* Nouveau wrapper */}
           <div className={styles.offerCard}>
-            <h3 className={styles.cardTitle}>À partir de votre Business Facebook Manager</h3>
+            <h3 className={styles.cardTitle}>À partir de votre Business Facebook <br />
+            Manager</h3>
             <ul className={styles.offerList}>
               <li>Mise en place d'une stratégie d'acquisition.</li>
               <li>Création des visuels des campagnes.</li>
