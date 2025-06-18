@@ -3,8 +3,8 @@
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Conservé pour mobile */
-  padding: 0 2rem;
+  justify-content: space-between; /* Pousse le logo à gauche et le menu burger à droite sur mobile */
+  padding: 0 2rem; /* Padding par défaut (utilisé sur mobile avant la media query) */
   background-color: #ffffff; /* Fond blanc */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 60px; /* Hauteur de la navbar à 60px */
@@ -36,7 +36,6 @@
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
-  /* margin-left: 1rem; */ /* Cet attribut est pour l'espace entre les liens, non le positionnement du groupe */
   transition: color 0.2s ease-in-out;
   font-family: 'Inter', sans-serif;
 }
@@ -52,13 +51,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem; /* Padding autour de l'icône burger */
+  padding-right: 3rem;
 }
 
 .burgerIcon {
   width: 24px;
   height: 24px;
-  stroke: #333333;
+  stroke: black; /* Couleur noire pour le trait de l'icône */
 }
 
 /* Styles du menu mobile (overlay) */
@@ -111,20 +111,24 @@
   color: #007bff; /* Couleur au survol */
 }
 
+/* Media Query pour les écrans plus petits (mobile) */
+@media (max-width: 767px) {
+  .navBar {
+    padding-right: 3rem; /* L'attribut 'padding-right' pousse le contenu vers la gauche en augmentant l'espace à droite du conteneur. Ajustez cette valeur (ex: 3rem) pour le décalage souhaité. */
+  }
+}
+
 /* Media Queries pour les écrans plus grands */
 @media (min-width: 768px) {
   .navBar {
-    /* MODIFIÉ: Aligne les éléments au début et ajoute un espace entre eux */
     justify-content: flex-start;
-    gap: 57rem; /* L'attribut 'gap' gère l'espace entre le logo et le bloc de liens */
-    /* Vous pouvez ajuster la valeur '8rem' pour rapprocher ou éloigner les liens du logo */
+    gap: 57rem; /* Cet attribut gère l'espace entre le logo et le bloc de liens sur desktop */
+    padding-right: 2rem; /* Réinitialise le padding-right pour desktop si nécessaire */
   }
 
   .navLinks {
     display: flex; /* Affiche les liens sur les écrans plus grands */
     flex-wrap: nowrap;
-    /* MODIFIÉ: Ajout de margin-left pour gérer l'espacement entre les liens (si nécessaire) */
-    /* margin-left: 1rem; */ /* Recommentez ou ajustez si vous souhaitez un espace entre chaque lien individuel */
   }
 
   .burgerMenu {
