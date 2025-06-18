@@ -6,7 +6,7 @@ const ContactSection = () => {
   return (
     <section className={styles.contactSection}>
       <div className={styles.contactContent}>
-        <h2 className={styles.sectionTitle}>Contactez-nous maintenant</h2>
+        <h2 className={styles.sectionTitle}>Contactez-nous</h2>
         <p className={styles.sectionSubtitle}>
           Dites-nous ce dont vous avez besoin, et on revient vers vous rapidement avec des solutions concrètes.
         </p>
