@@ -20,8 +20,8 @@ const NavBar = () => {
           <Image
             src="/images/logo.png" // Assure-toi que ton logo est bien dans public/images/
             alt="Cockpit Leads Logo"
-            width={76}
-            height={76}
+            width={60}
+            height={60}
             priority
           />
         </Link>
