@@ -1,3 +1,4 @@
+"use client"
 // src/components/NavBar.jsx
 import React, { useState } from 'react'; // Importe useState
 import Image from 'next/image';
