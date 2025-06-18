@@ -41,7 +41,8 @@ const Footer = () => {
             <li><Link href="/nos-offres" className={styles.footerLink}>Nos offres</Link></li>
             <li><Link href="/secteurs-activite" className={styles.footerLink}>Secteurs d'activité</Link></li>
             <li><Link href="/a-propos" className={styles.footerLink}>A Propos</Link></li>
-            <li><Link href="/politiques" className={styles.footerLink}>Politiques de confidentialité et mentions légales</Link></li>
+            <li><Link href="/politiques" className={styles.footerLink}>Politique de confidentialité</Link></li>
+            <li><Link href="/politiques" className={styles.footerLink}>Mentions légales</Link></li>
           </ul>
         </div>
 
