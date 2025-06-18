@@ -47,17 +47,14 @@ const ContactSection = () => {
               id="message"
               name="message"
               className={styles.formInput}
-              placeholder="" // Placeholder pour la grande zone de texte
+              placeholder="Quelle est votre besoin ?" // Placeholder pour la grande zone de texte
             ></input>
           </div>
-
-          {/* Bouton d'envoi du formulaire - non visible sur la maquette, mais essentiel pour un formulaire */}
-          {/* Vous pouvez le styliser comme les autres boutons du site */}
-          {/*
+<div>
           <button type="submit" className={styles.submitButton}>
             Envoyer
           </button>
-          */}
+          </div>
         </form>
       </div>
     </section>
