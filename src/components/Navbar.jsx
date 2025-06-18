@@ -1,29 +1,33 @@
 // src/components/NavBar.jsx
-import React from 'react';
+import React, { useState } from 'react'; // Importe useState
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/NavBar.module.css'; // Importe le CSS Module
 
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour gérer l'ouverture du menu mobile
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className={styles.navBar}>
       {/* Logo */}
       <div className={styles.logoContainer}>
-        <Link href="/"> {/* Le logo est souvent un lien vers la page d'accueil */}
+        <Link href="/">
           <Image
-            href="/"
             src="/images/logo.png" // Assure-toi que ton logo est bien dans public/images/
             alt="Cockpit Leads Logo"
-            width={76} // EXIGENCE 1: Largeur du logo à 76px
-            height={76} // EXIGENCE 1: Hauteur du logo à 76px
+            width={76}
+            height={76}
             priority
           />
         </Link>
       </div>
 
-      {/* Liens de navigation */}
+      {/* Liens de navigation (Desktop) */}
       <div className={styles.navLinks}>
-        {/* J'ai ajouté une classe spécifique navLinkItem pour appliquer les styles des liens */}
         <Link href="/" className={styles.navLinkItem}>
           Accueil
         </Link>
@@ -39,11 +43,34 @@ const NavBar = () => {
       </div>
 
       {/* Menu burger pour mobile */}
-      <button className={styles.burgerMenu}>
+      <button className={styles.burgerMenu} onClick={toggleMenu} aria-label="Toggle mobile menu">
         <svg className={styles.burgerIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
+
+      {/* Menu mobile (overlay) - Rendu conditionnel */}
+      {isMenuOpen && (
+        <div className={styles.mobileMenuOverlay}>
+          <button className={styles.closeMenuButton} onClick={toggleMenu} aria-label="Close mobile menu">
+            &times; {/* Symbole "x" pour fermer */}
+          </button>
+          <div className={styles.mobileMenuLinks}>
+            <Link href="/" className={styles.mobileLinkItem} onClick={toggleMenu}>
+              Accueil
+            </Link>
+            <Link href="/nos-offres" className={styles.mobileLinkItem} onClick={toggleMenu}>
+              Nos offres
+            </Link>
+            <Link href="/tarifs" className={styles.mobileLinkItem} onClick={toggleMenu}>
+              Tarifs
+            </Link>
+            <Link href="/a-propos" className={styles.mobileLinkItem} onClick={toggleMenu}>
+              A propos
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
