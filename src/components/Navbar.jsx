@@ -39,7 +39,7 @@ const NavBar = () => {
           Tarifs
         </Link>
         <Link href="/a-propos" className={styles.navLinkItem}>
-          A propos
+          À propos
         </Link>
       </div>
 
@@ -67,7 +67,7 @@ const NavBar = () => {
               Tarifs
             </Link>
             <Link href="/a-propos" className={styles.mobileLinkItem} onClick={toggleMenu}>
-              A propos
+              À propos
             </Link>
           </div>
         </div>
