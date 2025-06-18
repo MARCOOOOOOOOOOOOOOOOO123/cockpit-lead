@@ -1,39 +1,222 @@
 /* src/styles/Footer.module.css */
 
 .footer {
-  /* Équivalent de flex gap-[24px] flex-wrap items-center justify-center */
+  background-color: #0c1a25; /* Fond sombre du footer */
+  color: #ffffff; /* Texte blanc par défaut */
+  padding: 3rem 2rem; /* Padding général */
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* Pour gérer le positionnement des séparateurs */
+  position: relative; /* Pour les séparateurs absolus */
+}
+
+.footerContent {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace manque */
-  gap: 24px; /* Espacement entre les éléments */
-  align-items: center; /* Centre verticalement les éléments */
-  justify-content: center; /* Centre horizontalement les éléments */
-  padding: 1.5rem; /* Ajoute un peu de padding pour le confort visuel */
-  background-color: #f0f0f0; /* Une couleur de fond légère pour le footer */
-  border-top: 1px solid #e0e0e0; /* Petite bordure supérieure */
-  margin-top: auto; /* Pousse le footer vers le bas si le contenu est court */
-  width: 100%; /* S'assure qu'il prend toute la largeur */
+  flex-direction: column; /* Colonnes empilées sur mobile */
+  gap: 2rem; /* Espacement entre les colonnes sur mobile */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center; /* Centre le contenu sur mobile */
+  position: relative; /* Pour que les séparateurs soient relatifs à ce conteneur sur desktop */
+}
+
+/* Styles des colonnes */
+.col1, .col2, .col3 {
+  flex: 1; /* Permet aux colonnes de grandir */
+  padding: 1rem;
+}
+
+/* Colonne 1: Logo, Infos Contact, Bouton */
+.col1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centré sur mobile */
+  justify-content: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  justify-content: center; /* Centre le logo et texte sur mobile */
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  color: #ffffff;
+}
+
+.contactInfo {
+  margin-bottom: 2rem;
+  text-align: center; /* Centre les infos contact sur mobile */
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centre l'icône et texte sur mobile */
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+
+.footerButton {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0c1a25;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.footerButton:hover {
+  background-color: #e0e0e0;
+}
+
+/* Colonne 2: Liens de navigation */
+.col2 {
+  text-align: center; /* Centre les liens sur mobile */
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li {
+  margin-bottom: 0.8rem;
 }
 
 .footerLink {
-  /* Équivalent de flex items-center gap-2 hover:underline hover:underline-offset-4 */
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Équivalent de gap-2 (2 * 4px = 8px) */
-  color: #333333; /* Couleur de texte par défaut */
-  text-decoration: none; /* Supprime le soulignement par défaut */
-  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out; /* Transition douce */
+  color: #bbbbbb;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
 }
 
 .footerLink:hover {
-  color: #007bff; /* Couleur bleue au survol */
-  text-decoration: underline; /* Souligne au survol */
-  text-underline-offset: 4px; /* Décalage du soulignement */
+  color: #007bff;
 }
 
-/* Vous pouvez ajouter des media queries ici si vous voulez un comportement différent sur mobile */
-/* Par exemple, pour réduire le gap ou changer le flex-direction */
-@media (max-width: 640px) {
-  .footer {
-    gap: 16px; /* Réduire le gap sur mobile */
+/* Colonne 3: Suivez-nous sur */
+.col3 {
+  text-align: center; /* Centre le contenu sur mobile */
+}
+
+.followUsTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* Centre les icônes sur mobile */
+}
+
+.socialIcons img {
+  filter: brightness(0) invert(1); /* Rend les icônes blanches */
+  transition: filter 0.2s ease;
+}
+
+.socialIcons img:hover {
+  filter: brightness(0) invert(0.5) sepia(1) hue-rotate(180deg) saturate(2000%); /* Exemple de couleur au survol (bleu) */
+}
+
+
+/* Ligne inférieure: Mots-clés des leads */
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux mots-clés de passer à la ligne */
+  justify-content: center;
+  gap: 0.8rem; /* Espacement entre les mots-clés */
+  padding-top: 2rem;
+  margin-top: 3rem; /* Espacement avec le contenu au-dessus */
+  border-top: 1px solid #2a3d4d; /* Séparateur avec la section supérieure */
+}
+
+.keyword {
+  font-size: 0.85rem;
+  color: #999999;
+  white-space: nowrap; /* Empêche les mots-clés de se couper au milieu */
+}
+
+
+/* Media Queries pour les écrans plus grands (desktop) */
+@media (min-width: 768px) {
+  .footerContent {
+    flex-direction: row; /* Affiche les colonnes en ligne sur desktop */
+    text-align: left; /* Réaligne le texte à gauche */
+    gap: 3rem; /* Espacement entre les colonnes */
+    padding-bottom: 2rem; /* Ajoute un peu de padding en bas avant la ligne des mots-clés */
+  }
+
+  /* Alignements spécifiques pour desktop */
+  .col1 {
+    align-items: flex-start;
+  }
+  .logoContainer {
+    justify-content: flex-start;
+  }
+  .contactInfo {
+    text-align: left;
+  }
+  .contactItem {
+    justify-content: flex-start;
+  }
+  .col2 {
+    text-align: left;
+  }
+  .col3 {
+    text-align: left;
+  }
+  .socialIcons {
+    justify-content: flex-start;
+  }
+
+  /* Séparateurs verticaux */
+  .footerContent::before,
+  .footerContent::after {
+    content: '';
+    position: absolute;
+    top: 10%; /* Ajuster la position verticale */
+    bottom: 10%; /* Ajuster la hauteur du séparateur */
+    width: 1px;
+    background-color: #2a3d4d; /* Couleur du séparateur */
+  }
+
+  .footerContent::before {
+    left: 33%; /* Position du premier séparateur */
+  }
+
+  .footerContent::after {
+    left: 66%; /* Position du deuxième séparateur */
+  }
+
+  /* Ajuster le padding des colonnes pour laisser de la place aux séparateurs */
+  .col1 { padding-right: 2rem; }
+  .col2 { padding-left: 2rem; padding-right: 2rem; }
+  .col3 { padding-left: 2rem; }
+}
+
+/* Ajustements pour les très grands écrans */
+@media (min-width: 1024px) {
+  .footerContent {
+    gap: 4rem; /* Plus grand espacement entre les colonnes */
+  }
+
+  .footerContent::before {
+    left: 30%; /* Ajuster la position pour 3 colonnes de taille égale si nécessaire */
+  }
+
+  .footerContent::after {
+    left: 60%;
   }
 }
