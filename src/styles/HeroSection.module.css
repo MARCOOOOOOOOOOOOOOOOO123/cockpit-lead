@@ -22,7 +22,7 @@
 
 .contentContainer {
   text-align: left;
-  margin-right: 4rem;
+  margin-right: 4rem; /* CONSERVÉ POUR MOBILE - sera ajusté pour desktop */
   margin-bottom: 0;
   padding-top: 0;
   align-self: flex-start; /* Ajouté pour forcer l’alignement haut */
@@ -32,14 +32,14 @@
 .heroTitle {
   font-size: 2.1rem; /* Taille du titre pour mobile */
   font-weight: 700; /* Gras */
-  line-height: 0.4; /* Ajusté pour une meilleure lisibilité */
-  margin-bottom: 2rem;
+  line-height: 1.2; /* DÉFINI POUR MOBILE: Augmenté la hauteur de ligne pour éviter le chevauchement */
+  margin-bottom: 0.5rem; /* DÉFINI POUR MOBILE: Réduit la marge pour que les titres soient un peu plus proches mais lisibles */
 }
 
 .heroSubtitle {
   font-size: 1.125rem; /* Taille du sous-titre (environ 18px) */
-  line-height: Orem;
-  margin-bottom: 8rem;
+  line-height: 1.6; /* DÉFINI POUR MOBILE: Correction de la faute de frappe et bonne hauteur de ligne */
+  margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Pousse le bouton vers le bas sur mobile */
   opacity: 0.9; /* Légèrement moins opaque */
 }
 
@@ -47,10 +47,11 @@
   display: inline-block;
   background-color: #ffffff; /* Fond blanc pour le bouton */
   color: #0c1a25; /* Texte sombre pour le bouton */
-  padding: 1rem 4rem; /* MODIFICATION: Augmenté le padding horizontal pour élargir le bouton */
+  padding: 1rem 4rem; /* Augmenté le padding horizontal pour élargir le bouton */
   border-radius: 8px; /* Bords arrondis */
   text-decoration: none;
   font-weight: 500;
+  font-size: 15;
   transition: background-color 0.3s ease, color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -89,17 +90,21 @@
 
   .contentContainer {
     text-align: left; /* Aligne le texte à gauche sur desktop */
-    margin-right: 4rem; /* Espacement entre le texte et l'image */
-    margin-bottom: 0; /* Pas de marge en bas sur desktop */
+    margin-right: 2rem; /* MODIFIÉ: Réduit la marge droite pour ramener l'image plus près du texte */
+    /* L'attribut 'margin-right' gère l'espacement entre le conteneur de texte et le conteneur d'image. */
     padding-top: 0; /* S'assure que le texte colle en haut */
   }
 
   .heroTitle {
     font-size: 2.7rem; /* Plus grand titre pour desktop */
+    line-height: 1.2; /* Assure une bonne hauteur de ligne aussi sur desktop */
+    margin-bottom: 1rem; /* Marge entre les titres sur desktop */
   }
 
   .heroSubtitle {
     font-size: 1.25rem; /* Taille de sous-titre un peu plus grande */
+    line-height: 1.5; /* AJOUTÉ POUR DESKTOP: Hauteur de ligne plus standard pour desktop */
+    margin-bottom: 4rem; /* AJOUTÉ POUR DESKTOP: Revenir à la marge originale du desktop */
   }
 
   .imageContainer {
