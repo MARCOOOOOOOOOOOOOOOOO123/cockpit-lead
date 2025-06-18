@@ -39,8 +39,8 @@ const OffersSection = () => {
               <li>Création de votre page Facebook support.</li>
               <li>Création des visuels publicitaires.</li>
               <li>Rédaction des textes publicitaires.</li>
-              <li>Paramétrage des campagnes dans le business manager</li>
-              <li>Suivi et analyse des performances</li>
+              <li>Paramétrage des campagnes dans le business manager.</li>
+              <li>Suivi et analyse des performances.</li>
             </ul>
           </div>
           <Link href="/prendre-rdv" className={styles.cardButton}>
