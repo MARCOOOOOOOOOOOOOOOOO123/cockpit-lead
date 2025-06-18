@@ -10,9 +10,9 @@ const HeroSection = () => {
       {/* Première div : Conteneur du texte et du bouton à gauche */}
       <div className={styles.contentContainer}>
         <h1 className={styles.heroTitle}>
-          Transformez vos clics en clients <br />
-          avec nos campagnes Facebook <br />
-          Ads sur-mesure
+            Transformez vos clics en <br />
+            clients avec nos campagnes <br />  
+            Facebook Ads sur-mesure
         </h1>
         
         <p className={styles.heroSubtitle}>
