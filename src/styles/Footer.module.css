@@ -66,8 +66,8 @@
   display: inline-block;
   background-color: #ffffff;
   color: #0c1a25;
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
+  padding: 0.8rem 3rem; /* MODIFIÉ: Augmentation du padding horizontal pour élargir le bouton */
+  border-radius: 8px; /* Bords arrondis */
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
@@ -173,6 +173,8 @@
   }
   .col2 {
     text-align: left;
+    padding-top: 3.2rem; /* Décale le contenu de la 2ème colonne vers le bas */
+    /* Ajustez cette valeur pour obtenir l'alignement visuel parfait */
   }
   .col3 {
     text-align: left;
