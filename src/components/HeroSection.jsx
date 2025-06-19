@@ -10,16 +10,17 @@ const HeroSection = () => {
       {/* Première div : Conteneur du texte et du bouton à gauche */}
       <div className={styles.contentContainer}>
         <h1 className={styles.heroTitle}>
-            Transformez vos clics en <br />
-            clients avec nos campagnes <br />  
-            Facebook Ads sur-mesure
+          Générez des leads qualifiés grâce <br />à nos 
+          campagnes Facebook Ads personnalisées, conçues 
+          pour <br />convertir vos prospects en clients.
         </h1>
-        
-        <p className={styles.heroSubtitle}>
-          Des campagnes Facebook ciblées, des leads qualifiés livrés <br /> 
-          prêts à convertir.
-        </p>
-        <Link href="/prendre-rdv" className={styles.heroButton}>
+
+           <Link 
+          href="https://calendly.com/agylstudio1/30min" // URL Calendly mise à jour avec l'email
+          target="_blank" // Ouvre dans un nouvel onglet
+          rel="noopener noreferrer" // Bonne pratique de sécurité
+          className={styles.heroButton}
+        >
           Prendre RDV
         </Link>
       </div>
@@ -28,7 +29,7 @@ const HeroSection = () => {
         <Image
           src="/images/image banniere (1).png" // Assurez-vous que cette image est bien dans public/images/
           alt="Illustration de la génération de leads avec Facebook Ads"
-          width={400} // Ajuste ces valeurs pour être responsive, basé sur le design
+          width={600} // Ajuste ces valeurs pour être responsive, basé sur le design
           height={600} // Ajuste ces valeurs pour être responsive, basé sur le design
           priority // Important pour l'image LCP de la page
           className={styles.heroImage}
