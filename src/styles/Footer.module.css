@@ -139,7 +139,7 @@
   gap: 0.8rem; /* Espacement entre les mots-clés */
   padding-top: 2rem;
   margin-top: 3rem; /* Espacement avec le contenu au-dessus */
-  border-top: 1px solid #2a3d4d; /* Séparateur avec la section supérieure */
+  border-top: 1px solid #ffffff; /* Séparateur avec la section supérieure */
 }
 
 .keyword {
