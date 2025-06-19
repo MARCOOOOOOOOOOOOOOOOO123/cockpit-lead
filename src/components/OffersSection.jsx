@@ -8,7 +8,7 @@ const OffersSection = () => {
     <section className={styles.offersSection}>
       <h2 className={styles.sectionTitle}>Notre offre</h2>
       <p className={styles.sectionSubtitle}>
-        On s'occupe de tout, vous recevez des leads prêts à convertir.
+        Nos campagnes Facebook Ads sur-mesure transforment vos prospects en clients en vous apportant des leads qualifiés.
       </p>
 
       <div className={styles.cardsContainer}>
@@ -25,7 +25,12 @@ const OffersSection = () => {
               <li>Suivi et analyse des performances et optimisation.</li>
             </ul>
           </div>
-          <Link href="/prendre-rdv" className={styles.cardButton}>
+         <Link 
+            href="https://calendly.com/agylstudio1/30min" // URL Calendly mise à jour
+            target="_blank" // Ouvre dans un nouvel onglet
+            rel="noopener noreferrer" // Bonne pratique de sécurité
+            className={styles.cardButton}
+          >
             Prendre RDV
           </Link>
         </div>
@@ -44,7 +49,12 @@ const OffersSection = () => {
               <li>Suivi et analyse des performances.</li>
             </ul>
           </div>
-          <Link href="/prendre-rdv" className={styles.cardButton}>
+          <Link 
+            href="https://calendly.com/agylstudio1/30min" // URL Calendly mise à jour
+            target="_blank" // Ouvre dans un nouvel onglet
+            rel="noopener noreferrer" // Bonne pratique de sécurité
+            className={styles.cardButton}
+          >
             Prendre RDV
           </Link>
         </div>
