@@ -29,7 +29,12 @@ const Footer = () => {
               0685421563
             </p>
           </div>
-          <Link href="/prendre-rdv" className={styles.footerButton}>
+          <Link 
+            href="https://calendly.com/agylstudio1/30min" // URL Calendly mise à jour
+            target="_blank" // Ouvre dans un nouvel onglet
+            rel="noopener noreferrer" // Bonne pratique de sécurité
+            className={styles.footerButton}
+          >
             Prendre RDV
           </Link>
         </div>
