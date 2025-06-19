@@ -56,8 +56,12 @@
   max-width: 409px; /* La carte prend la largeur de son wrapper */
   flex-grow: 0; /* Empêche la carte de s'étirer (elle prendra la hauteur de son contenu) */
   margin-right: auto; /* Empêche le bouton de s'éloigner de la carte */
+ transition: background-color 0.3s ease; /* Ajout d'une transition pour un effet doux */
 }
 
+.offerCard:hover {
+  background-color: #e9e9e9; /* Couleur grise moyenne au survol */
+}
 
 .cardTitle {
   justify-self: center;
