@@ -1,4 +1,5 @@
 // src/app/page.js
+import NavBar from '@/components/Navbar';
 import homeStyles from '../styles/Home.module.css';
 import HeroSection from '../components/HeroSection';
 import OffersSection from '../components/OffersSection';

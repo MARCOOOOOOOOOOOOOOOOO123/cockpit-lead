@@ -1,12 +1,18 @@
-"use client"
 // src/components/NavBar.jsx
-import React, { useState } from 'react'; // Importe useState
+"use client"
+import React, { useState, useEffect } from 'react'; // Importe useState et useEffect
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/NavBar.module.css'; // Importe le CSS Module
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour gérer l'ouverture du menu mobile
+  const [mounted, setMounted] = useState(false); // Nouveau état pour vérifier le montage côté client
+
+  // useEffect se déclenche uniquement après le montage du composant sur le client
+  useEffect(() => {
+    setMounted(true);
+  }, []); // Le tableau vide [] assure que cela ne s'exécute qu'une seule fois après le premier rendu
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -51,7 +57,8 @@ const NavBar = () => {
       </button>
 
       {/* Menu mobile (overlay) - Rendu conditionnel */}
-      {isMenuOpen && (
+      {/* Le menu est rendu uniquement si le composant est monté côté client ET isMenuOpen est vrai */}
+      {mounted && isMenuOpen && (
         <div className={styles.mobileMenuOverlay}>
           <button className={styles.closeMenuButton} onClick={toggleMenu} aria-label="Close mobile menu">
             &times; {/* Symbole "x" pour fermer */}
