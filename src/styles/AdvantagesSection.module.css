@@ -1,0 +1,102 @@
+/* src/styles/AdvantagesSection.module.css */
+
+.advantagesSection {
+  background-color: #f0f0f0; /* Fond gris clair comme sur l'image */
+  padding: 4rem 2rem; /* Espacement intérieur */
+  text-align: center;
+  color: #333333;
+  margin: 0 auto; /* Pour centrer la section si elle a un max-width */
+  max-width: 1440px; /* Limite la largeur de la section entière */
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  font-size: 1.3rem; /* Taille du titre principal */
+  font-weight: 600;
+  line-height: 1.3; /* Espacement des lignes pour le titre */
+  margin-bottom: 4rem; /* Grande marge sous le titre */
+  color: #0c1a25; /* Couleur du titre, foncée */
+  max-width: 900px; /* Limite la largeur du titre pour une meilleure lecture */
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille responsive, min 250px par colonne */
+  gap: 2rem; /* Espacement entre les cartes */
+  max-width: 1200px; /* Largeur maximale pour la grille */
+  margin: 0 auto; /* Centre la grille */
+}
+
+.advantageCard {
+  background-color: #ffffff; /* Fond blanc pour chaque carte */
+  border-radius: 8px; /* Bords arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  padding: 2rem; /* Padding interne de chaque carte */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu de la carte */
+  text-align: center; /* Centre le texte dans la carte */
+  min-height: 250px; /* Hauteur minimale pour les cartes */
+  justify-content: flex-start; /* Aligne le contenu en haut de la carte */
+   transition: background-color 0.3s ease; /* Ajout d'une transition pour un effet doux */
+}
+
+.advantageCard:hover {
+  background-color: #d2d2d2; /* Changement de couleur de fond au survol (gris moyen) */
+}
+
+
+.advantageIcon {
+  width: 70px; /* Taille de l'icône */
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 1.5rem; /* Espacement entre l'icône et le titre de la carte */
+}
+
+.cardTitle {
+  font-size: 1.25rem; /* Taille du titre de la carte */
+  font-weight: 600;
+  margin-bottom: 0.8rem; /* Espacement entre le titre de la carte et la description */
+  color: #0c1a25;
+}
+
+.cardDescription {
+  font-size: 0.95rem; /* Taille de la description */
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 0; /* Pas de marge en bas du paragraphe */
+}
+
+/* Media Queries pour ajustements sur différents écrans */
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem; /* Titre plus grand sur desktop */
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur les tablettes/ordinateurs */
+    gap: 2.5rem; /* Espacement uniforme sur desktop */
+  }
+
+  .advantageCard {
+    padding: 2.5rem; /* Plus de padding sur desktop */
+    min-height: 280px; /* Augmente la hauteur minimale sur desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .sectionTitle {
+    font-size: 2.2rem; /* Encore plus grand sur très grands écrans */
+    
+  margin-right: 360;
+  line-height: 1.3; /* Espacement des lignes pour le titre */
+  white-space: nowrap;
+  }
+
+  .gridContainer {
+    gap: 3rem; /* Encore plus d'espace sur très grands écrans */
+  }
+}
