@@ -84,31 +84,30 @@
     min-height: 450px; /* Hauteur minimale de la section pour desktop */
   }
 
-  .contentContainer {
-    text-align: left; /* Aligne le texte à gauche sur desktop */
-    margin-right: 2rem; /* MODIFIÉ: Réduit la marge droite pour ramener l'image plus près du texte */
+   .contentContainer {
+    text-align: left;
+    margin-right: 6rem; /* MODIFIÉ: Augmenté la marge droite pour ramener l'image plus à gauche */
     /* L'attribut 'margin-right' gère l'espacement entre le conteneur de texte et le conteneur d'image. */
-    padding-top: 0; /* S'assure que le texte colle en haut */
+    padding-top: 0;
   }
 
   .heroTitle {
-    font-size: 2.3rem; /* Plus grand titre pour desktop */
-    line-height: 1.2; /* Assure une bonne hauteur de ligne aussi sur desktop */
-    margin-bottom: 8rem; /* Marge entre les titres sur desktop */
+    font-size: 2.4rem; /* Plus grand titre pour desktop */
+    line-height: 1.2;
+    margin-bottom: 6rem; /* Marge entre les titres sur desktop */
   }
 
 
   .imageContainer {
+    width: auto; /* L'image prend sa largeur définie par Next/image ou max-width */
+    margin-top: 8rem;
     
-    margin-top: 8rem; /* Décale l'image vers le bas pour que le texte soit plus haut */
-    /* Ajuste cette valeur (5rem) pour trouver l'alignement parfait */
   }
 
   .heroImage {
-  max-width: 400; /* S'assure que l'image est responsive */
-  height: auto; /* Maintient le ratio d'aspect */
-  display: block; /* Évite l'espace sous l'image */
-  margin-right: 250;
-}
+    max-width: 100%; /* S'assure que l'image est responsive */
+    height: auto;
+    margin-right: 150px;
+  }
 }
 
