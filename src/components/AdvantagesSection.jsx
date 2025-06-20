@@ -6,7 +6,7 @@ import styles from '../styles/AdvantagesSection.module.css'; // Importe le CSS M
 const advantages = [
   {
     icon: '/images/Group 1.png', // Chemin vers votre icône Chronomètre
-    title: 'Frais & 100% exclusifs',
+    title: 'Campagne efficace',
     description: 'Les leads reçus sont générés le jour même via nos campagnes d\'acquisition.',
   },
   {
