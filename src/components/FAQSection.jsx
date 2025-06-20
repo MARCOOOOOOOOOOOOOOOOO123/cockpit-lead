@@ -1,5 +1,5 @@
-"use client"
 // src/components/FAQSection.jsx
+"use client"
 import React, { useState } from 'react';
 import styles from '../styles/FAQSection.module.css'; // Importe le CSS Module
 
@@ -32,7 +32,6 @@ const faqItems = [
 
 const FAQSection = () => {
   // Gère l'état d'ouverture/fermeture pour les éléments interactifs de la FAQ
-  // Commence à 1 car l'index 0 est statique
   const [openIndex, setOpenIndex] = useState(null); // Aucun élément ouvert par défaut pour les interactifs
 
   const toggleFAQ = (index) => {
@@ -44,24 +43,18 @@ const FAQSection = () => {
       <h2 className={styles.sectionTitle}>FAQ</h2>
 
       <div className={styles.faqContainer}>
-        {/* Premier élément FAQ - statique comme sur la maquette */}
-        <div className={styles.faqItemStatic}>
-          <h3 className={styles.faqQuestionStatic}>{faqItems[0].question}</h3>
-          <p className={styles.faqAnswerStatic}>{faqItems[0].answer}</p>
-        </div>
-
-        {/* Reste des éléments FAQ - interactifs */}
-        {faqItems.slice(1).map((item, index) => ( // Commence à partir du deuxième élément
-          <div key={index + 1} className={styles.faqItem}> {/* index + 1 pour garder l'index correct relatif à faqItems */}
+        {/* Tous les éléments FAQ sont maintenant interactifs et mappés à partir du premier */}
+        {faqItems.map((item, index) => (
+          <div key={index} className={styles.faqItem}> 
             <button
-              className={`${styles.faqQuestion} ${openIndex === index + 1 ? styles.active : ''}`}
-              onClick={() => toggleFAQ(index + 1)}
-              aria-expanded={openIndex === index + 1}
+              className={`${styles.faqQuestion} ${openIndex === index ? styles.active : ''}`}
+              onClick={() => toggleFAQ(index)}
+              aria-expanded={openIndex === index}
             >
               <span>{item.question}</span>
-              <span className={styles.toggleIcon}>{openIndex === index + 1 ? '-' : '+'}</span>
+              <span className={styles.toggleIcon}>{openIndex === index ? '-' : '+'}</span>
             </button>
-            {openIndex === index + 1 && (
+            {openIndex === index && (
               <div className={styles.faqAnswer}>
                 <p>{item.answer}</p>
               </div>
