@@ -8,7 +8,7 @@ const ContactSection = () => {
       <div className={styles.contactContent}>
         <h2 className={styles.sectionTitle}>Contactez-nous</h2>
         <p className={styles.sectionSubtitle}>
-          Dites-nous ce dont vous avez besoin, et on revient vers vous rapidement avec des solutions concrètes.
+   Boostez vos résultats avec des campagnes Facebook Ads performantes. Contactez-nous dès aujourd'hui!
         </p>
 
         <form className={styles.contactForm}>
