@@ -7,7 +7,7 @@ const advantages = [
   {
     icon: '/images/Group 1.png', // Chemin vers votre icône Chronomètre
     title: 'Campagne efficace',
-    description: 'Les leads reçus sont générés le jour même via nos campagnes d\'acquisition.',
+    description: "Chaque publicité Facebook est conçue avec un ciblage précis : par région, par centre d'intérêt, ou par intention d'achat. Pour une efficacité optimale."
   },
   {
     icon: '/images/Group 25.png', // Chemin vers votre icône Campagnes
