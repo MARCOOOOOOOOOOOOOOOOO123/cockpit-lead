@@ -74,7 +74,7 @@
 @media (min-width: 768px) {
   .sectionTitle {
     font-size: 2rem; /* Titre plus grand sur desktop */
-    margin-right: 310;
+    margin-right: 310px;
     line-height: 1.3; /* Espacement des lignes pour le titre */
     white-space: nowrap;
   }
