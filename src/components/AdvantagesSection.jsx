@@ -22,7 +22,7 @@ const advantages = [
   {
     icon: '/images/Group 23.png', // Chemin vers votre icône Analyse
     title: 'Suivi, analyse de performances et optimisation.',
-    description: 'Nous surveillons chaque campagne en temps réel, ajustons les paramètres pour améliorer vos résultats et vous garantir un coût par lead optimisé.',
+    description: "Notre méthode inclut la mise en place, le suivi et l'optimisation de chaque campagne Facebook Ads, avec des résultats mesurables."
   },
 ];
 
