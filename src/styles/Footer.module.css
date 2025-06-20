@@ -1,222 +1,168 @@
-/* src/styles/Footer.module.css */
+/* src/styles/HeroSection.module.css */
 
-.footer {
-  background-color: #0c1a25; /* Fond sombre du footer */
-  color: #ffffff; /* Texte blanc par défaut */
-  padding: 3rem 2rem; /* Padding général */
-  font-family: 'Inter', sans-serif;
-  overflow: hidden; /* Pour gérer le positionnement des séparateurs */
-  position: relative; /* Pour les séparateurs absolus */
-}
-
-.footerContent {
+.heroSection {
   display: flex;
-  flex-direction: column; /* Colonnes empilées sur mobile */
-  gap: 2rem; /* Espacement entre les colonnes sur mobile */
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center; /* Centre le contenu sur mobile */
-  position: relative; /* Pour que les séparateurs soient relatifs à ce conteneur sur desktop */
-}
-
-/* Styles des colonnes */
-.col1, .col2, .col3 {
-  flex: 1; /* Permet aux colonnes de grandir */
-  padding: 1rem;
-}
-
-/* Colonne 1: Logo, Infos Contact, Bouton */
-.col1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centré sur mobile */
+  flex-direction: column; /* Par défaut, en colonne pour mobile */
+  align-items: center;
   justify-content: center;
+  /* Utilise l'image Rectangle 3.png comme fond de section */
+  background-image: url('/images/Rectangle 3.png'); /* Définition de l'image de fond */
+  background-size: 100% 100%; /* L'image couvre 100% de la largeur et 100% de la hauteur, sans être coupée */
+  background-position: center bottom; /* Centre l'image et l'aligne en bas pour bien voir la courbure */
+  background-repeat: no-repeat; /* Empêche l'image de se répéter */
+  background-color: #0c1a25; /* Couleur de fond de secours si l'image ne charge pas ou pour les zones non couvertes */
+
+  color: #ffffff; /* Texte blanc */
+  padding: 4rem 2rem; /* Padding pour l'espacement intérieur */
+  min-height: 300px; /* Hauteur minimale de la section pour mobile */
+  width: 100%; /* La largeur est de 100% du conteneur parent */
+  overflow: hidden; /* Pour s'assurer que l'image ne déborde pas */
+  /* Les styles de border-radius sont retirés car l'image de fond elle-même définit la forme courbée */
 }
 
-.logoContainer {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  justify-content: center; /* Centre le logo et texte sur mobile */
+.contentContainer {
+  text-align: left;
+  margin-right: 4rem; /* CONSERVÉ POUR MOBILE - sera ajusté pour desktop */
+  margin-bottom: 0;
+  padding-top: 0;
+  align-self: flex-start; /* Ajouté pour forcer l’alignement haut */
 }
 
-.logoText {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-left: 0.5rem;
-  color: #ffffff;
+
+.heroTitle {
+  font-size: 2.1rem; /* Taille du titre pour mobile */
+  font-weight: 700; /* Gras */
+  line-height: 1.2; /* DÉFINI POUR MOBILE: Augmenté la hauteur de ligne pour éviter le chevauchement */
+  margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Réduit la marge pour que les titres soient un peu plus proches mais lisibles */
 }
 
-.contactInfo {
-  margin-bottom: 2rem;
-  text-align: center; /* Centre les infos contact sur mobile */
+.heroSubtitle {
+  font-size: 1.125rem; /* Taille du sous-titre (environ 18px) */
+  line-height: 1.6; /* DÉFINI POUR MOBILE: Correction de la faute de frappe et bonne hauteur de ligne */
+  margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Pousse le bouton vers le bas sur mobile */
+  opacity: 0.9; /* Légèrement moins opaque */
 }
 
-.contactItem {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centre l'icône et texte sur mobile */
-  gap: 0.5rem;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  color: #bbbbbb;
-}
-
-.footerButton {
+.heroButton {
   display: inline-block;
-  background-color: #ffffff;
-  color: #0c1a25;
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
+  background-color: #ffffff; /* Fond blanc pour le bouton */
+  color: #0c1a25; /* Texte sombre pour le bouton */
+  padding: 1rem 4rem; /* Augmenté le padding horizontal pour élargir le bouton */
+  border-radius: 8px; /* Bords arrondis */
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-size: 15;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.footerButton:hover {
-  background-color: #e0e0e0;
+.heroButton:hover {
+  background-color: #e0e0e0; /* Un peu plus sombre au survol */
+  color: #000000;
 }
 
-/* Colonne 2: Liens de navigation */
-.col2 {
-  text-align: center; /* Centre les liens sur mobile */
-}
-
-.navLinks {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navLinks li {
-  margin-bottom: 0.8rem;
-}
-
-.footerLink {
-  color: #bbbbbb;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-}
-
-.footerLink:hover {
-  color: #007bff;
-}
-
-/* Colonne 3: Suivez-nous sur */
-.col3 {
-  text-align: center; /* Centre le contenu sur mobile */
-}
-
-.followUsTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.socialIcons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center; /* Centre les icônes sur mobile */
-}
-
-.socialIcons img {
-  filter: brightness(0) invert(1); /* Rend les icônes blanches */
-  transition: filter 0.2s ease;
-}
-
-.socialIcons img:hover {
-  filter: brightness(0) invert(0.5) sepia(1) hue-rotate(180deg) saturate(2000%); /* Exemple de couleur au survol (bleu) */
-}
-
-
-/* Ligne inférieure: Mots-clés des leads */
-.bottomRow {
-  display: flex;
-  flex-wrap: wrap; /* Permet aux mots-clés de passer à la ligne */
+.imageContainer {
+  display: flex; /* Ajouté pour centrer l'image à l'intérieur de son conteneur si elle est plus petite */
   justify-content: center;
-  gap: 0.8rem; /* Espacement entre les mots-clés */
-  padding-top: 2rem;
-  margin-top: 3rem; /* Espacement avec le contenu au-dessus */
-  border-top: 1px solid #2a3d4d; /* Séparateur avec la section supérieure */
+  align-items: center;
+  width: 100%; /* Prend toute la largeur disponible pour l'image */
+  max-width: 600px; /* Limite la largeur de l'image sur les grands écrans */
+  margin-top: 5rem; /* Tu peux mettre 6rem ou plus pour créer un bon écart */
 }
 
-.keyword {
-  font-size: 0.85rem;
-  color: #999999;
-  white-space: nowrap; /* Empêche les mots-clés de se couper au milieu */
+.heroImage {
+  max-width: 300; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-right: 90;
 }
+
 
 
 /* Media Queries pour les écrans plus grands (desktop) */
 @media (min-width: 768px) {
-  .footerContent {
-    flex-direction: row; /* Affiche les colonnes en ligne sur desktop */
-    text-align: left; /* Réaligne le texte à gauche */
-    gap: 3rem; /* Espacement entre les colonnes */
-    padding-bottom: 2rem; /* Ajoute un peu de padding en bas avant la ligne des mots-clés */
+  .heroSection {
+    flex-direction: row; /* En ligne pour les grands écrans */
+    justify-content: flex-start; /* Pousse le contenu vers la gauche */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    padding: 6rem 4rem; /* Plus de padding sur desktop */
+    padding-left: 8rem; /* Ajoute un padding à gauche pour décaler du bord */
+    min-height: 450px; /* Hauteur minimale de la section pour desktop */
   }
 
-  /* Alignements spécifiques pour desktop */
-  .col1 {
-    align-items: flex-start;
-  }
-  .logoContainer {
-    justify-content: flex-start;
-  }
-  .contactInfo {
-    text-align: left;
-  }
-  .contactItem {
-    justify-content: flex-start;
-  }
-  .col2 {
-    text-align: left;
-  }
-  .col3 {
-    text-align: left;
-  }
-  .socialIcons {
-    justify-content: flex-start;
+  .contentContainer {
+    text-align: left; /* Aligne le texte à gauche sur desktop */
+    margin-right: 2rem; /* MODIFIÉ: Réduit la marge droite pour ramener l'image plus près du texte */
+    /* L'attribut 'margin-right' gère l'espacement entre le conteneur de texte et le conteneur d'image. */
+    padding-top: 0; /* S'assure que le texte colle en haut */
   }
 
-  /* Séparateurs verticaux */
-  .footerContent::before,
-  .footerContent::after {
-    content: '';
-    position: absolute;
-    top: 10%; /* Ajuster la position verticale */
-    bottom: 10%; /* Ajuster la hauteur du séparateur */
-    width: 1px;
-    background-color: #2a3d4d; /* Couleur du séparateur */
+  .heroTitle {
+    font-size: 2.7rem; /* Plus grand titre pour desktop */
+    line-height: 1.2; /* Assure une bonne hauteur de ligne aussi sur desktop */
+    margin-bottom: 1rem; /* Marge entre les titres sur desktop */
   }
 
-  .footerContent::before {
-    left: 33%; /* Position du premier séparateur */
+  .heroSubtitle {
+    font-size: 1.25rem; /* Taille de sous-titre un peu plus grande */
+    line-height: 1.5; /* AJOUTÉ POUR DESKTOP: Hauteur de ligne plus standard pour desktop */
+    margin-bottom: 4rem; /* AJOUTÉ POUR DESKTOP: Revenir à la marge originale du desktop */
   }
 
-  .footerContent::after {
-    left: 66%; /* Position du deuxième séparateur */
+  .imageContainer {
+    width: auto; /* L'image prend sa largeur définie par Next/image ou max-width */
+    margin-top: 8rem; /* Décale l'image vers le bas pour que le texte soit plus haut */
+    /* Ajuste cette valeur (5rem) pour trouver l'alignement parfait */
   }
 
-  /* Ajuster le padding des colonnes pour laisser de la place aux séparateurs */
-  .col1 { padding-right: 2rem; }
-  .col2 { padding-left: 2rem; padding-right: 2rem; }
-  .col3 { padding-left: 2rem; }
+  .heroImage {
+  max-width: 100%; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-left: 180;
+}
 }
 
-/* Ajustements pour les très grands écrans */
-@media (min-width: 1024px) {
-  .footerContent {
-    gap: 4rem; /* Plus grand espacement entre les colonnes */
+/* Media Query spécifique pour la largeur de 1440px */
+@media (min-width: 1440px) {
+  .heroSection {
+    /* Lorsque la section est centrée à 1440px, le padding-left s'appliquera bien */
+    max-width: 1440px;
+    margin: 0 auto; /* Centre la section sur des écrans très larges */
+    padding-left: 8rem; /* Conserve le padding-left pour les très grands écrans */
+  }
+  .contentContainer {
+    text-align: left; /* Aligne le texte à gauche sur desktop */
+    margin-right: 2rem; /* MODIFIÉ: Réduit la marge droite pour ramener l'image plus près du texte */
+    /* L'attribut 'margin-right' gère l'espacement entre le conteneur de texte et le conteneur d'image. */
+    padding-top: 0; /* S'assure que le texte colle en haut */
   }
 
-  .footerContent::before {
-    left: 30%; /* Ajuster la position pour 3 colonnes de taille égale si nécessaire */
+  .heroTitle {
+    font-size: 2.7rem; /* Plus grand titre pour desktop */
+    line-height: 1.2; /* Assure une bonne hauteur de ligne aussi sur desktop */
+    margin-bottom: 1rem; /* Marge entre les titres sur desktop */
+   
+     margin-bottom: 8rem;
   }
 
-  .footerContent::after {
-    left: 60%;
+  .heroSubtitle {
+    font-size: 1.25rem; /* Taille de sous-titre un peu plus grande */
+    line-height: 1.5; /* AJOUTÉ POUR DESKTOP: Hauteur de ligne plus standard pour desktop */
+    margin-bottom: 4rem; /* AJOUTÉ POUR DESKTOP: Revenir à la marge originale du desktop */
   }
+
+  .imageContainer {
+    width: auto; /* L'image prend sa largeur définie par Next/image ou max-width */
+    margin-top: 8rem; /* Décale l'image vers le bas pour que le texte soit plus haut */
+    /* Ajuste cette valeur (5rem) pour trouver l'alignement parfait */
+  }
+
+  .heroImage {
+  max-width: 100%; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-left: 10;
 }
+}
+
