@@ -74,9 +74,9 @@
 @media (min-width: 768px) {
   .sectionTitle {
     font-size: 2rem; /* Titre plus grand sur desktop */
-      margin-right: 360;
-  line-height: 1.3; /* Espacement des lignes pour le titre */
-  white-space: nowrap;
+    margin-right: 360;
+    line-height: 1.3; /* Espacement des lignes pour le titre */
+    white-space: nowrap;
   }
 
   .gridContainer {
@@ -90,16 +90,3 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .sectionTitle {
-    font-size: 2.2rem; /* Encore plus grand sur très grands écrans */
-    
-  margin-right: 360;
-  line-height: 1.3; /* Espacement des lignes pour le titre */
-  white-space: nowrap;
-  }
-
-  .gridContainer {
-    gap: 3rem; /* Encore plus d'espace sur très grands écrans */
-  }
-}
