@@ -17,7 +17,7 @@ const sectors = [
 const SectorsSection = () => {
   return (
     <section className={styles.sectorsSection}>
-      <h2 className={styles.sectionTitle}>Nous générons vos leads sur les secteurs suivants :</h2>
+      <h2 className={styles.sectionTitle}>NOUS GÉNÉRONS VOS LEADS SUR LES SECTEURS SUIVANTS </h2>
       <div className={styles.gridContainer}>
         {sectors.map((sector, index) => (
           <div key={index} className={styles.sectorCard}>
