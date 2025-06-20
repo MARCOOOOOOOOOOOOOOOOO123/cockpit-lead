@@ -17,7 +17,7 @@ const advantages = [
   {
     icon: '/images/Group 21.png', // Chemin vers votre icône Géolocalisation
     title: 'Ciblage géographique',
-    description: 'Nous ciblons vos leads en fonction de vos zones de chalandise (Région, département, ville).',
+    description: "Chaque lead Facebook est obtenu grâce à des campagnes ciblées et optimisées sur vos préférences en termes de zones géographiques, centres d'intérêt, ..."
   },
   {
     icon: '/images/Group 23.png', // Chemin vers votre icône Analyse
