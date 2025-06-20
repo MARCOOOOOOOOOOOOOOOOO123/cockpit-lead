@@ -6,50 +6,61 @@ import styles from '../styles/OffersSection.module.css'; // Importe le CSS Modul
 const OffersSection = () => {
   return (
     <section className={styles.offersSection}>
-      <h2 className={styles.sectionTitle}>Notre offre</h2>
+      <h2 className={styles.sectionTitle}>NOTRE OFFRE</h2>
       <p className={styles.sectionSubtitle}>
-        On s'occupe de tout, vous recevez des leads prêts à convertir.
+        Nos campagnes Facebook Ads sur-mesure transforment vos prospects en clients en vous apportant des leads qualifiés.
       </p>
 
       <div className={styles.cardsContainer}>
-        {/* Première colonne d'offre : "À partir de votre Business Facebook Manager" */}
-        <div className={styles.offerCard}>
-          <h3 className={styles.cardTitle}>À partir de votre Business Facebook Manager</h3>
-          <ul className={styles.offerList}>
-            <li>Mise en place d'une stratégie d'acquisition.</li>
-            <li>Création des visuels des campagnes.</li>
-            <li>Rédaction des textes publicitaires.</li>
-            <li>Paramétrage des campagnes dans le business manager.</li>
-            <li>Suivi et analyse des performances et optimisation.</li>
-          </ul>
-          {/* Le bouton est déplacé en dehors de cette div */}
+        {/* Premier groupe : Carte 1 + Bouton 1 */}
+        <div className={styles.offerItemWrapper}> {/* Nouveau wrapper */}
+          <div className={styles.offerCard}>
+            <h3 className={styles.cardTitle}>À partir de votre Business Facebook <br />
+            Manager</h3>
+            <ul className={styles.offerList}>
+              <li>Mise en place d'une stratégie d'acquisition.</li>
+              <li>Création des visuels des campagnes.</li>
+              <li>Rédaction des textes publicitaires.</li>
+              <li>Paramétrage des campagnes dans le business manager.</li>
+              <li>Suivi et analyse des performances et optimisation.</li>
+            </ul>
+          </div>
+         <Link 
+            href="https://calendly.com/agylstudio1/30min" // URL Calendly mise à jour
+            target="_blank" // Ouvre dans un nouvel onglet
+            rel="noopener noreferrer" // Bonne pratique de sécurité
+            className={styles.cardButton}
+          >
+            Prendre RDV
+          </Link>
         </div>
 
-        {/* Deuxième colonne d'offre : "Lancement de vos campagne de A à Z" */}
-        <div className={styles.offerCard}>
-          <h3 className={styles.cardTitle}>Lancement de vos campagnes de A à Z</h3>
-          <ul className={styles.offerList}>
-            <li>Mise en place d'une stratégie d'acquisition.</li>
-            <li>Création de votre compte Facebook business manager.</li>
-            <li>Création de votre page Facebook support.</li>
-            <li>Création des visuels publicitaires.</li>
-            <li>Rédaction des textes publicitaires.</li>
-            <li>Paramétrage des campagnes dans le business manager</li>
-            <li>Suivi et analyse des performances</li>
-          </ul>
-          {/* Le bouton est déplacé en dehors de cette div */}
+        {/* Deuxième groupe : Carte 2 + Bouton 2 */}
+        <div className={styles.offerItemWrapper}> {/* Nouveau wrapper */}
+          <div className={styles.offerCard}>
+            <h3 className={styles.cardTitle}>Lancement de vos campagnes de A à Z</h3>
+            <ul className={styles.offerList}>
+              <li>Mise en place d'une stratégie d'acquisition.</li>
+              <li>Création de votre compte Facebook business manager.</li>
+              <li>Création de votre page Facebook support.</li>
+              <li>Création des visuels publicitaires.</li>
+              <li>Rédaction des textes publicitaires.</li>
+              <li>Paramétrage des campagnes dans le business manager.</li>
+              <li>Suivi et analyse des performances.</li>
+            </ul>
+          </div>
+          <Link 
+            href="https://calendly.com/agylstudio1/30min" // URL Calendly mise à jour
+            target="_blank" // Ouvre dans un nouvel onglet
+            rel="noopener noreferrer" // Bonne pratique de sécurité
+            className={styles.cardButton}
+          >
+            Prendre RDV
+          </Link>
         </div>
       </div>
 
-      {/* Nouveau conteneur pour les boutons, en dehors des cartes */}
-      <div className={styles.buttonsContainer}>
-        <Link href="/prendre-rdv" className={styles.cardButton}>
-          Prendre RDV
-        </Link>
-        <Link href="/prendre-rdv" className={styles.cardButton}>
-          Prendre RDV
-        </Link>
-      </div>
+      {/* L'ancien conteneur de boutons (`buttonsContainer`) est maintenant supprimé */}
     </section>
   );
 };
