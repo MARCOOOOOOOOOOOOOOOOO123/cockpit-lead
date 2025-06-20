@@ -8,7 +8,7 @@ const OffersSection = () => {
     <section className={styles.offersSection}>
       <h2 className={styles.sectionTitle}>NOTRE OFFRE</h2>
       <p className={styles.sectionSubtitle}>
-        Nos campagnes Facebook Ads sur-mesure transforment vos prospects en clients en vous apportant des leads qualifiés.
+        À partir de votre compte existant ou en partant de zéro, nous lançons votre campagne publicitaire Facebook complète.
       </p>
 
       <div className={styles.cardsContainer}>
