@@ -12,14 +12,14 @@ import AdvantagesSection from '@/components/AdvantagesSection';
 export default function Home() {
   return (
     <div className={homeStyles.pageContainer}>
-      <NavBar /> {/* La barre de navigation*/ }
+      
       <HeroSection /> {/* La section Hero */}
       <OffersSection /> {/* La section "Notre offre" */}
       <SectorsSection /> {/* La section "Secteurs" */}
       <AdvantagesSection />
       <ContactSection /> {/* La section "Contactez-nous" */}
       <FAQSection /> {/* La nouvelle section "FAQ" */}
-      <Footer /> {/* La section Footer */}
+      
       
 
       
