@@ -68,7 +68,7 @@
   max-width: 300; /* S'assure que l'image est responsive */
   height: auto; /* Maintient le ratio d'aspect */
   display: block; /* Évite l'espace sous l'image */
-  margin-right: 90;
+  margin-right: 90px;
 }
 
 
