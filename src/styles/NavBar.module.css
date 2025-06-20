@@ -1,193 +1,125 @@
-/* src/styles/NavBar.module.css */
+/* src/styles/HeroSection.module.css */
 
-.navBar {
+.heroSection {
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* Pousse le logo à gauche et le menu burger à droite sur mobile */
-  padding: 0 2rem; /* Padding par défaut (utilisé sur mobile avant la media query) */
-  background-color: #ffffff; /* Fond blanc */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 60px; /* Hauteur de la navbar à 60px */
-
-  position: fixed; /* Rendre la navbar fixe */
-  top: 0; /* Aligner en haut du viewport */
-  left: 0; /* Aligner à gauche du viewport */
-  width: 100%; /* Occuper toute la largeur du viewport */
-  z-index: 1000; /* Assurer qu'elle est au-dessus des autres éléments */
-}
-
-.logoContainer {
-  display: flex; /* Assure que le logo est bien aligné */
-  align-items: center;
-}
-
-.navLinks {
-  display: none; /* Masqué par défaut pour mobile */
-}
-
-.navLinkItem { /* Nouvelle classe pour les styles spécifiques aux liens */
-  display: flex;
+  flex-direction: column; /* Par défaut, en colonne pour mobile */
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
-  width: 120px;
-  height: 15px;
-  color: #2f2f2f;
-  font-size: 13px;
+  /* Utilise l'image Rectangle 3.png comme fond de section */
+  background-image: url('/images/Rectangle 3.png'); /* Définition de l'image de fond */
+  background-size: 100% 100%; /* L'image couvre 100% de la largeur et 100% de la hauteur, sans être coupée */
+  background-position: center bottom; /* Centre l'image et l'aligne en bas pour bien voir la courbure */
+  background-repeat: no-repeat; /* Empêche l'image de se répéter */
+  background-color: #0c1a25; /* Couleur de fond de secours si l'image ne charge pas ou pour les zones non couvertes */
+
+  color: #ffffff; /* Texte blanc */
+  padding: 4rem 2rem; /* Padding pour l'espacement intérieur */
+  min-height: 300px; /* Hauteur minimale de la section pour mobile */
+  width: 100%; /* La largeur est de 100% du conteneur parent */
+  overflow: hidden; /* Pour s'assurer que l'image ne déborde pas */
+  /* Les styles de border-radius sont retirés car l'image de fond elle-même définit la forme courbée */
+}
+
+.contentContainer {
+  text-align: left;
+  margin-right: 4rem; /* CONSERVÉ POUR MOBILE - sera ajusté pour desktop */
+  margin-bottom: 0;
+  padding-top: 0;
+  align-self: flex-start; /* Ajouté pour forcer l’alignement haut */
+}
+
+
+.heroTitle {
+  font-size: 2.1rem; /* Taille du titre pour mobile */
+  font-weight: 700; /* Gras */
+  line-height: 1.2; /* DÉFINI POUR MOBILE: Augmenté la hauteur de ligne pour éviter le chevauchement */
+  margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Réduit la marge pour que les titres soient un peu plus proches mais lisibles */
+}
+
+.heroSubtitle {
+  font-size: 1.125rem; /* Taille du sous-titre (environ 18px) */
+  line-height: 1.6; /* DÉFINI POUR MOBILE: Correction de la faute de frappe et bonne hauteur de ligne */
+  margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Pousse le bouton vers le bas sur mobile */
+  opacity: 0.9; /* Légèrement moins opaque */
+}
+
+.heroButton {
+  display: inline-block;
+  background-color: #ffffff; /* Fond blanc pour le bouton */
+  color: #0c1a25; /* Texte sombre pour le bouton */
+  padding: 1rem 4rem; /* Augmenté le padding horizontal pour élargir le bouton */
+  border-radius: 8px; /* Bords arrondis */
+  text-decoration: none;
   font-weight: 500;
-  text-decoration: none;
-
-  margin-left: 1rem; /* L'attribut 'margin-left' gère l'espacement entre les liens */
-
-  transition: color 0.2s ease-in-out;
-  font-family: 'Inter', sans-serif;
+  font-size: 15;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navLinkItem:hover {
-  color: #007bff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.heroButton:hover {
+  background-color: #e0e0e0; /* Un peu plus sombre au survol */
+  color: #000000;
 }
 
-.burgerMenu {
-  display: block; /* Visible par défaut pour mobile */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem; /* Padding autour de l'icône burger */
-  padding-right: 3rem;
-}
-
-.burgerIcon {
-  width: 24px;
-  height: 24px;
-  stroke: black; /* Couleur noire pour le trait de l'icône */
-}
-
-/* Styles du menu mobile (overlay) */
-.mobileMenuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent sombre */
-  z-index: 1001; /* Au-dessus de la navbar */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.imageContainer {
+  display: flex; /* Ajouté pour centrer l'image à l'intérieur de son conteneur si elle est plus petite */
   justify-content: center;
-  overflow-y: auto; /* Permet le défilement si le contenu est trop grand */
-}
-
-.closeMenuButton {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 3rem;
-  cursor: pointer;
-  z-index: 1002;
-  line-height: 1; /* Pour mieux aligner le "x" */
-}
-
-.mobileMenuLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem; /* Espacement entre les liens du menu mobile */
-  text-align: center;
-}
-
-.mobileLinkItem {
-  color: #ffffff; /* Texte blanc pour les liens du menu mobile */
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-  font-family: 'Inter', sans-serif;
-  padding: 0.5rem; /* Ajoute un peu de padding pour les zones de clic */
-}
-
-.mobileLinkItem:hover {
-  color: #007bff; /* Couleur au survol */
-}
-
-
-  .navBar {
-    padding-right: 3rem; /* L'attribut 'padding-right' pousse le contenu vers la gauche en augmentant l'espace à droite du conteneur. Ajustez cette valeur (ex: 3rem) pour le décalage souhaité. */
-  }
-
-
-/* Styles du menu mobile (overlay) */
-.mobileMenuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent sombre */
-  z-index: 1001; /* Au-dessus de la navbar */
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow-y: auto; /* Permet le défilement si le contenu est trop grand */
+  width: 100%; /* Prend toute la largeur disponible pour l'image */
+  max-width: 600px; /* Limite la largeur de l'image sur les grands écrans */
+  margin-top: 5rem; /* Tu peux mettre 6rem ou plus pour créer un bon écart */
 }
 
-.closeMenuButton {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 3rem;
-  cursor: pointer;
-  z-index: 1002;
-  line-height: 1; /* Pour mieux aligner le "x" */
+.heroImage {
+  max-width: 300; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-right: 90;
 }
 
-.mobileMenuLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem; /* Espacement entre les liens du menu mobile */
-  text-align: center;
-}
 
-.mobileLinkItem {
-  color: #ffffff; /* Texte blanc pour les liens du menu mobile */
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-  font-family: 'Inter', sans-serif;
-  padding: 0.5rem; /* Ajoute un peu de padding pour les zones de clic */
-}
 
-.mobileLinkItem:hover {
-  color: #007bff; /* Couleur au survol */
-}
-
-/* Media Queries pour les écrans plus grands */
+/* Media Queries pour les écrans plus grands (desktop) */
 @media (min-width: 768px) {
-  .navBar {
-    justify-content: flex-start;
-    gap: 54rem; /* Cet attribut gère l'espace entre le logo et le bloc de liens sur desktop */
-    padding-right: 2rem; /* Réinitialise le padding-right pour desktop si nécessaire */
+  .heroSection {
+    flex-direction: row; /* En ligne pour les grands écrans */
+    justify-content: flex-start; /* Pousse le contenu vers la gauche */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    padding: 6rem 4rem; /* Plus de padding sur desktop */
+    padding-left: 8rem; /* Ajoute un padding à gauche pour décaler du bord */
+    min-height: 450px; /* Hauteur minimale de la section pour desktop */
   }
 
-  .navLinks {
-    display: flex; /* Affiche les liens sur les écrans plus grands */
-    flex-wrap: nowrap;
+  .contentContainer {
+    text-align: left; /* Aligne le texte à gauche sur desktop */
+    margin-right: 2rem; /* MODIFIÉ: Réduit la marge droite pour ramener l'image plus près du texte */
+    /* L'attribut 'margin-right' gère l'espacement entre le conteneur de texte et le conteneur d'image. */
+    padding-top: 0; /* S'assure que le texte colle en haut */
   }
 
-  .burgerMenu {
-    display: none; /* Masque le menu burger sur les écrans plus grands */
+  .heroTitle {
+    font-size: 2.7rem; /* Plus grand titre pour desktop */
+    line-height: 1.2; /* Assure une bonne hauteur de ligne aussi sur desktop */
+    margin-bottom: 1rem; /* Marge entre les titres sur desktop */
   }
 
-  .mobileMenuOverlay {
-    display: none; /* Cache le menu mobile sur desktop */
+  .heroSubtitle {
+    font-size: 1.25rem; /* Taille de sous-titre un peu plus grande */
+    line-height: 1.5; /* AJOUTÉ POUR DESKTOP: Hauteur de ligne plus standard pour desktop */
+    margin-bottom: 4rem; /* AJOUTÉ POUR DESKTOP: Revenir à la marge originale du desktop */
   }
+
+  .imageContainer {
+    width: auto; /* L'image prend sa largeur définie par Next/image ou max-width */
+    margin-top: 8rem; /* Décale l'image vers le bas pour que le texte soit plus haut */
+    /* Ajuste cette valeur (5rem) pour trouver l'alignement parfait */
+  }
+
+  .heroImage {
+  max-width: 100%; /* S'assure que l'image est responsive */
+  height: auto; /* Maintient le ratio d'aspect */
+  display: block; /* Évite l'espace sous l'image */
+  margin-right: 150;
 }
+}
+
