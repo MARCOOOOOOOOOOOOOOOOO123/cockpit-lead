@@ -119,7 +119,7 @@
   max-width: 100%; /* S'assure que l'image est responsive */
   height: auto; /* Maintient le ratio d'aspect */
   display: block; /* Évite l'espace sous l'image */
-  margin-left: 180;
+  margin-right: 150;
 }
 }
 
@@ -139,7 +139,7 @@
   }
 
   .heroTitle {
-    font-size: 2.7rem; /* Plus grand titre pour desktop */
+    font-size: 2.5rem; /* Plus grand titre pour desktop */
     line-height: 1.2; /* Assure une bonne hauteur de ligne aussi sur desktop */
     margin-bottom: 1rem; /* Marge entre les titres sur desktop */
    
@@ -162,7 +162,7 @@
   max-width: 100%; /* S'assure que l'image est responsive */
   height: auto; /* Maintient le ratio d'aspect */
   display: block; /* Évite l'espace sous l'image */
-  margin-left: 10;
+  margin-right: 150;
 }
 }
 
