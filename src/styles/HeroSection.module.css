@@ -30,18 +30,12 @@
 
 
 .heroTitle {
-  font-size: 2.1rem; /* Taille du titre pour mobile */
+  font-size: 1.8rem; /* Taille du titre pour mobile */
   font-weight: 700; /* Gras */
   line-height: 1.2; /* DÉFINI POUR MOBILE: Augmenté la hauteur de ligne pour éviter le chevauchement */
   margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Réduit la marge pour que les titres soient un peu plus proches mais lisibles */
 }
 
-.heroSubtitle {
-  font-size: 1.125rem; /* Taille du sous-titre (environ 18px) */
-  line-height: 1.6; /* DÉFINI POUR MOBILE: Correction de la faute de frappe et bonne hauteur de ligne */
-  margin-bottom: 4rem; /* DÉFINI POUR MOBILE: Pousse le bouton vers le bas sur mobile */
-  opacity: 0.9; /* Légèrement moins opaque */
-}
 
 .heroButton {
   display: inline-block;
